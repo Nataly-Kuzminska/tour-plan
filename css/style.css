@@ -504,7 +504,11 @@ template {
 .hotel-grid {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+}
+.hotel-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .stars {
