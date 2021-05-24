@@ -394,6 +394,9 @@ template {
   line-height: 18px;
   color: inherit;
 }
+.navbar-menu__item--mobile_visible {
+  display: none;
+}
 
 .logo {
   width: 177px;
@@ -445,6 +448,10 @@ template {
   font-size: 14px;
   line-height: 18px;
   color: #333333;
+}
+
+.navbar__user--mobile_visible, .navbar__search--mobile_visible {
+  display: none;
 }
 
 .breadcrump-list {
@@ -942,6 +949,9 @@ template {
   padding-top: 108px;
   padding-bottom: 46px;
 }
+.footer__legal {
+  margin: 0 0 0 auto;
+}
 .footer-wrapper {
   display: grid;
   grid-template-columns: repeat(4, minmax(-webkit-min-content, 1fr));
@@ -1223,6 +1233,16 @@ template {
     right: 0;
     z-index: 99;
   }
+  .navbar__user--mobile_hidden, .navbar__search--mobile_hidden {
+    display: none;
+  }
+  .navbar__user--mobile_visible, .navbar__search--mobile_visible {
+    display: flex;
+  }
+  .navbar__user {
+    flex-direction: column;
+    justify-content: center;
+  }
   .navbar-bottom {
     display: none;
     position: fixed;
@@ -1230,6 +1250,7 @@ template {
     right: 0;
     bottom: 0;
     top: 78px;
+    padding-top: 30px;
   }
   .navbar-bottom--visible {
     display: block;
@@ -1239,6 +1260,9 @@ template {
   }
   .navbar-menu__item {
     margin-bottom: 20px;
+  }
+  .navbar-menu__item--mobile_visible {
+    display: block;
   }
 
   .menu-button {
@@ -1257,6 +1281,12 @@ template {
     width: 16px;
     height: 1px;
     background-color: #333333;
+  }
+
+  .user__name--light {
+    color: #fff;
+    margin-left: 0;
+    margin-top: 10px;
   }
 
   .stars {
@@ -1344,6 +1374,10 @@ template {
   .footer__input {
     flex-basis: 100%;
   }
+  .footer__logo--left {
+    width: 99px;
+    height: 110px;
+  }
 }
 @media (max-width: 576px) {
   .logo {
@@ -1380,6 +1414,9 @@ template {
     width: 100%;
   }
 
+  .footer__message {
+    width: 100%;
+  }
   .footer-wrapper {
     grid-template-columns: 1fr;
   }
