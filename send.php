@@ -25,7 +25,7 @@ try {
     $mail->isSMTP();   
     $mail->CharSet = "UTF-8";
     $mail->SMTPAuth   = true;
-    $mail->SMTPDebug = 2;
+    //$mail->SMTPDebug = 2;
     $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
 
     // Настройки вашей почты
@@ -40,19 +40,19 @@ try {
     $mail->addAddress('dashkonata@arnika2.com');  
 
 
-// Отправка сообщения
-$mail->isHTML(true);
-$mail->Subject = $title;
-$mail->Body = $body;    
+    // Отправка сообщения
+    $mail->isHTML(true);
+    $mail->Subject = $title;
+    $mail->Body = $body;    
 
-// Проверяем отравленность сообщения
-if ($mail->send()) {$result = "success";} 
-else {$result = "error";}
+    // Проверяем отравленность сообщения
+    if ($mail->send()) {$result = "success";} 
+    else {$result = "error";}
 
-} catch (Exception $e) {
-    $result = "error";
-    $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
-}
+    } catch (Exception $e) {
+        $result = "error";
+        $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
+    }
 
-// Отображение результата
-echo json_encode(["result" => $result, "resultfile" => $rfile, "status" => $status]);
+    // Отображение результата
+   header('Location: thankyou.html');
